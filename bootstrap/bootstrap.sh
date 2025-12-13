@@ -4,9 +4,9 @@ GREEN="\033[32m"
 RESET="\033[0m"
 
 echo ""
-echo -e "${BLUE}=================================${RESET}"
+echo -e "${BLUE}=====================================${RESET}"
 echo -e "${GREEN}[ SYSTEM ] Installing infrastructure${RESET}"
-echo -e "${BLUE}=================================${RESET}"
+echo -e "${BLUE}=====================================${RESET}"
 echo ""
 # SYSTEM - core infrastructure
 SYSTEM_PKGS=(
@@ -44,24 +44,28 @@ echo -e "${GREEN}[ APPS ] Installing essential user tools${RESET}"
 echo -e "${BLUE}=========================================${RESET}"
 echo ""
 
-# APPS - essential user tools
+# APPS - essential user tools from pacman
 APPS_PKGS=(
   alacritty           # terminal emulator
   nvim                # text editor, obviously
   tmux                # terminal multiplexor
+  dbeaver             # database tool
   )
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 
+# APPS - essential user tools from AUR
 AUR_APPS_PKGS=(
   brave-bin           # web browser
+  postman-bin
+  lazydocker          # terminal UI for managing Docker containers
   )
 
 yay -S --needed --noconfirm "${AUR_APPS_PKGS[@]}"
 
 echo ""
 echo -e "${BLUE}=================================${RESET}"
-echo -e "${GREEN}[ UX ] Installing desktop layer${RESET}"
+echo -e "${GREEN}[ UX ] Installing desktop layer ${RESET}"
 echo -e "${BLUE}=================================${RESET}"
 echo ""
 
