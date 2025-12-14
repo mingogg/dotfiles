@@ -26,3 +26,8 @@ ln -sfn "$DOTFILES_DIR/config/hypr" "$CONFIG_DIR/hypr"
 # Nvim
 rm -rf "$CONFIG_DIR/nvim"
 ln -sfn "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
+
+# Waybar
+mkdir -p "$CONFIG_DIR/waybar"
+ln -sfn "$DOTFILES_DIR/config/waybar/config.jsonc" "$CONFIG_DIR/waybar/config.jsonc"
+ln -sfn "$CONFIG_DIR/theme/current/waybar/style.css" "$CONFIG_DIR/waybar/style.css"
