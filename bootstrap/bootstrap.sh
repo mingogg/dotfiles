@@ -88,8 +88,15 @@ UX_PKGS=(
 
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
 
-echo ""
-echo -e "${GREEN}[ BOOTSTRAP ] Running enable phase ${RESET}"
-echo ""
+# Enables needed for the system to work
 bash "$SCRIPT_DIR/enable.sh"
 
+# Create the symlink for the configs & themes
+bash "$SCRIPT_DIR/link.sh"
+
+
+echo ""
+echo -e "${BLUE}====================================${RESET}"
+echo -e "${GREEN}Reboot the system to apply changes ${RESET}"
+echo -e "${BLUE}====================================${RESET}"
+echo ""
