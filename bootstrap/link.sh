@@ -18,6 +18,7 @@ mkdir -p "$CONFIG_DIR"
 
 # Create the Theme system
 ln -sfn "$DOTFILES_DIR/theme" "$CONFIG_DIR/theme"
+ln -sfn "$DOTFILES_DIR/theme/default" "$CONFIG_DIR/theme/current"
 
 # Hyprland
 rm -rf "$CONFIG_DIR/hypr"
