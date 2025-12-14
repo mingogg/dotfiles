@@ -29,3 +29,7 @@ ln -sfn "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # Waybar
 ln -sfn "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybars"
+
+# BASH
+rm "$HOME/.bashrc"
+ln -sfn "$DOTFILES_DIR/config/bashrc/.bashrc" "$HOME/.bashrc"
