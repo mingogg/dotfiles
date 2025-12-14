@@ -18,6 +18,8 @@ SYSTEM_PKGS=(
   which                         # command locator (diagnostics)
   base-devel                    # build tools (yay)
   git                           # clone PKGBUILDs
+  docker                        # container engine
+  docker-compose-plugin         # compose support
   )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
@@ -57,7 +59,7 @@ sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 # APPS - essential user tools from AUR
 AUR_APPS_PKGS=(
   brave-bin           # web browser
-  postman-bin
+  postman-bin         # testing APIs
   lazydocker          # terminal UI for managing Docker containers
   )
 
@@ -78,3 +80,8 @@ UX_PKGS=(
   )
 
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
+
+echo ""
+echo -e "${GREEN}[ BOOTSTRAP ] Running enable phase ${RESET}"
+echo ""
+bash enable.sh
