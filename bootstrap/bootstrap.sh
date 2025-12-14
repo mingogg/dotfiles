@@ -19,7 +19,7 @@ SYSTEM_PKGS=(
   base-devel                    # build tools (yay)
   git                           # clone PKGBUILDs
   docker                        # container engine
-  docker-compose-plugin         # compose support
+  docker-compose                # compose support
   )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
