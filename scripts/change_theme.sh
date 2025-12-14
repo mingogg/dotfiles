@@ -16,4 +16,4 @@ selected_theme=$(
 ln -sfn "$THEMES_DIR/$selected_theme" "$CURRENT_LINK"
 
 # Hotreload
-bash "$SCRIPTS_DIR/relaunch_apps.sh"
+bash "$SCRIPT_DIR/relaunch_apps.sh"
