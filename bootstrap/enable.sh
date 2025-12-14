@@ -20,3 +20,6 @@ if systemctl list-unit-files | grep -q docker.service; then
   USER_NAME="$(id -un)"
   sudo usermod -aG docker "$USER_NAME"
 fi
+
+# Bash
+source ~/.bashrc

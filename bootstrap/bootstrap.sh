@@ -69,6 +69,7 @@ AUR_APPS_PKGS=(
   brave-bin           # web browser
   postman-bin         # testing APIs
   lazydocker          # terminal UI for managing Docker containers
+  walker              # app launcher
   )
 
 yay -S --needed --noconfirm "${AUR_APPS_PKGS[@]}"
@@ -89,11 +90,11 @@ UX_PKGS=(
 
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
 
-# Enables needed for the system to work
-bash "$SCRIPT_DIR/enable.sh"
-
 # Create the symlink for the configs & themes
 bash "$SCRIPT_DIR/link.sh"
+
+# Enables needed for the system to work
+bash "$SCRIPT_DIR/enable.sh"
 
 hyprctl reload
 echo ""
