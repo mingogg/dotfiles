@@ -3,6 +3,9 @@ BLUE="\033[34m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
+# Saves the direction of the script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Ensure system time is correct (required for SSL / git / AUR)
 sudo timedatectl set-ntp true
 
@@ -88,5 +91,5 @@ sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
 echo ""
 echo -e "${GREEN}[ BOOTSTRAP ] Running enable phase ${RESET}"
 echo ""
-bash enable.sh
+bash "$SCRIPT_DIR/enable.sh"
 
