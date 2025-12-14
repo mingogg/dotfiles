@@ -3,26 +3,15 @@ BLUE="\033[34m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
-
-# Ask for sudo password only once
-sudo -v
-
-# Keep sudo alive until the installation ends
-while true; do
-  sudo -v
-  sleep 60
-done &
-SUDO_KEEPALIVE_PID=$!
-
 # Ensure system time is correct (required for SSL / git / AUR)
 sudo timedatectl set-ntp true
-timedatectl status
 
 echo ""
 echo -e "${BLUE}=====================================${RESET}"
 echo -e "${GREEN}[ SYSTEM ] Installing infrastructure${RESET}"
 echo -e "${BLUE}=====================================${RESET}"
 echo ""
+
 # SYSTEM - core infrastructure
 SYSTEM_PKGS=(
   networkmanager                # network connectivity
@@ -101,4 +90,3 @@ echo -e "${GREEN}[ BOOTSTRAP ] Running enable phase ${RESET}"
 echo ""
 bash enable.sh
 
-kill "$SUDO_KEEPALIVE_PID"
