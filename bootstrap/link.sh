@@ -29,6 +29,7 @@ ln -sfn "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # Waybar
 ln -sfn "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybar"
+ln -sfn "$CONFIG_DIR/theme/current/waybar/style.css" "$CONFIG_DIR/waybar/style.css"
 
 # BASH
 rm "$HOME/.bashrc"
