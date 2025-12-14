@@ -97,7 +97,7 @@ bash "$SCRIPT_DIR/link.sh"
 
 hyprctl reload
 echo ""
-echo -e "${BLUE}====================================${RESET}"
-echo -e "${GREEN}Reboot the system to apply changes ${RESET}"
-echo -e "${BLUE}====================================${RESET}"
+echo -e "${BLUE}===================================${RESET}"
+echo -e "${GREEN}Reboot the system to apply changes${RESET}"
+echo -e "${BLUE}===================================${RESET}"
 echo ""
