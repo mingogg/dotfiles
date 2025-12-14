@@ -21,5 +21,5 @@ if systemctl list-unit-files | grep -q docker.service; then
   sudo usermod -aG docker "$USER_NAME"
 fi
 
-# Bash
-source ~/.bashrc
+# Re-launch apps to apply theme for the first time
+bash ~/dotfiles/scripts/relaunch_apps.sh

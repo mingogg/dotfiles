@@ -4,6 +4,8 @@ CURRENT="$HOME/.config/theme/current"
 
 hyprctl reload
 
+source ~/.bashrc
+
 pkill swaybg
 sleep 0.1
 nohup swaybg -i "$CURRENT/wallpaper/wallpaper.jpg" -m fill >/dev/null 2>&1 &

@@ -60,6 +60,8 @@ APPS_PKGS=(
   tmux                # terminal multiplexor
   dbeaver             # database tool
   nautilus            # file manager
+  wl-clipboard        # clipboard (Wayland)
+  hyprshot            # screenshot utility
   )
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
@@ -85,7 +87,6 @@ UX_PKGS=(
   waybar                # status bar
   mako                  # notification daemon
   swaybg                # wallpaper manager
-  wl-clipboard          # clipboard (Wayland)
   )
 
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
