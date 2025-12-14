@@ -95,7 +95,7 @@ bash "$SCRIPT_DIR/enable.sh"
 # Create the symlink for the configs & themes
 bash "$SCRIPT_DIR/link.sh"
 
-
+hyprctl reload
 echo ""
 echo -e "${BLUE}====================================${RESET}"
 echo -e "${GREEN}Reboot the system to apply changes ${RESET}"
