@@ -17,10 +17,10 @@ echo ""
 mkdir -p "$CONFIG_DIR"
 
 # Create the Theme system
-mkdir -p "$CONFIG_DIR/theme"
-ln -sfn "$DOTFILES_DIR/theme/default" "$CONFIG_DIR/theme/current"
+ln -sfn "$DOTFILES_DIR/theme" "$CONFIG_DIR/theme"
 
 # Hyprland
+rm -rf "$CONFIG_DIR/hypr"
 ln -sfn "$DOTFILES_DIR/config/hypr" "$CONFIG_DIR/hypr"
 
 # Nvim
@@ -28,6 +28,4 @@ rm -rf "$CONFIG_DIR/nvim"
 ln -sfn "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # Waybar
-mkdir -p "$CONFIG_DIR/waybar"
-ln -sfn "$DOTFILES_DIR/config/waybar/config.jsonc" "$CONFIG_DIR/waybar/config.jsonc"
-ln -sfn "$CONFIG_DIR/theme/current/waybar/style.css" "$CONFIG_DIR/waybar/style.css"
+ln -sfn "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybars"
