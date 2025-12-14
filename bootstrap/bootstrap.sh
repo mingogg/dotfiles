@@ -59,6 +59,7 @@ APPS_PKGS=(
   nvim                # text editor, obviously
   tmux                # terminal multiplexor
   dbeaver             # database tool
+  nautilus            # file manager
   )
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
