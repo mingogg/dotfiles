@@ -28,7 +28,7 @@ rm -rf "$CONFIG_DIR/nvim"
 ln -sfn "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # Waybar
-ln -sfn "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybars"
+ln -sfn "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybar"
 
 # BASH
 rm "$HOME/.bashrc"
