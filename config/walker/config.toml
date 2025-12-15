@@ -1,0 +1,19 @@
+[ui]
+width = 420
+height = 360
+border_width = 1
+border_radius = 6
+padding = 12
+
+[input]
+placeholder = "Search..."
+
+[list]
+item_height = 36
+show_icons = false
+spacing = 6
+
+[behavior]
+close_on_select = true
+close_on_esc = true
+close_on_unfocus = true

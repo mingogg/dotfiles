@@ -3,28 +3,28 @@
 SCRIPTS_DIR="$HOME/dotfiles/scripts"
 
 options=$(cat <<EOF
-🎨  Style: Change Theme
-⏻  System: Logout
-🔁  System: Reboot
-⏹  System: Shutdown
+  Style: Change Theme
+  System: Logout
+  System: Reboot
+  System: Shutdown
 EOF
 )
 
-selected=$(echo "$options" | walker -d -p "Go...")
+selected=$(echo "$options" | walker -d -p "Search...")
 
 [ -z "$selected" ] && exit 0
 
 case "$selected" in
-  "🎨  Style: Change Theme")
+  "  Style: Change Theme")
     "$SCRIPTS_DIR/change_theme.sh"
     ;;
-  "⏻  System: Logout")
+  "  System: Logout")
     hyprctl dispatch exit
     ;;
-  "🔁  System: Reboot")
+  "  System: Reboot")
     systemctl reboot
     ;;
-  "⏹  System: Shutdown")
+  "  System: Shutdown")
     systemctl poweroff
     ;;
 esac
