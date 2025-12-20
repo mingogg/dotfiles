@@ -17,12 +17,21 @@ safe_link(){
   fi
 }
 
+safe_link_root(){
+  local target="$1"
+  local link="$2"
+
+  sudo mkdir -p "$(dirname "$link")"
+  sudo ln -sfn "$target" "$link"
+}
+
 BLUE="\033[34m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
-CONFIG_DIR="$HOME/.config"
-DOTFILES_DIR="$HOME/dotfiles"
+REAL_HOME="$HOME"
+CONFIG_DIR="$REAL_HOME/.config"
+DOTFILES_DIR="$REAL_HOME/dotfiles"
 
 echo ""
 echo -e "${BLUE}===================================${RESET}"
@@ -57,5 +66,7 @@ safe_link "$DOTFILES_DIR/config/walker" "$CONFIG_DIR/walker"
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-3.0" "$CONFIG_DIR/gtk-3.0"
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
 
+
+echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
 # Greetd (login manager)
-safe_link "$DOTFILES_DIR/config/greetd/config.toml" /etc/greetd/config.toml
+safe_link_root "$DOTFILES_DIR/config/greetd/config.toml" "/etc/greetd/config.toml"

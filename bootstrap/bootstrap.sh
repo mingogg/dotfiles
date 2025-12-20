@@ -94,7 +94,7 @@ UX_PKGS=(
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
 
 # Create the symlink for the configs & themes
-sudo bash "$SCRIPT_DIR/link.sh"
+bash "$SCRIPT_DIR/link.sh"
 
 # Enables needed for the system to work
 bash "$SCRIPT_DIR/enable.sh"
