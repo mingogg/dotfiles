@@ -56,3 +56,6 @@ safe_link "$DOTFILES_DIR/config/walker" "$CONFIG_DIR/walker"
 # GTK Themes
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-3.0" "$CONFIG_DIR/gtk-3.0"
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
+
+# Greetd (login manager)
+safe_link "$DOTFILES_DIR/config/greetd/config.toml" /etc/greetd/config.toml
