@@ -1,0 +1,9 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --greeting \"Welcome to Arch!\" --background \"#000000\" --text-color \"#ffffff\" --cmd Hyprland"
+
+# Optional: set a fixed default user.
+# If let commented, tuigreet will prompt for the username at login.
+# user = yourUsername

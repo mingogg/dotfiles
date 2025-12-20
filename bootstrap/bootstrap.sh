@@ -62,6 +62,8 @@ APPS_PKGS=(
   nautilus            # file manager
   wl-clipboard        # clipboard (Wayland)
   hyprshot            # screenshot utility
+  greetd              # login manager
+  greetd-tuigreet     # frontend for login manager
   )
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
@@ -98,6 +100,7 @@ bash "$SCRIPT_DIR/link.sh"
 bash "$SCRIPT_DIR/enable.sh"
 
 hyprctl reload
+
 echo ""
 echo -e "${BLUE}===================================${RESET}"
 echo -e "${GREEN}Reboot the system to apply changes${RESET}"

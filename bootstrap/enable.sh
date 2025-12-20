@@ -23,3 +23,6 @@ fi
 
 # Re-launch apps to apply theme for the first time
 bash ~/dotfiles/scripts/relaunch_apps.sh
+
+# Greetd (login manager)
+systemctl enable greetd
