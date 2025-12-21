@@ -52,10 +52,7 @@
 
   "clock": {
     "format": "{:%a %d %b %H:%M} ",
-    "tooltip-format": "{calendar}",
-    "calendar":{
-      "mode": "month"
-    }
+    "tooltip": false
   },
 
   "network": {

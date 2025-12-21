@@ -29,6 +29,7 @@ SYSTEM_PKGS=(
   docker-compose                # compose support
   ttf-nerd-fonts-symbols        # symbols render
   btop                          # resource monitor
+  wiremix                       # TUI audio mixer
 )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
