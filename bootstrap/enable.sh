@@ -10,6 +10,9 @@ echo -e "${GREEN}[ ENABLE ] Enabling system services${RESET}"
 echo -e "${BLUE}====================================${RESET}"
 echo ""
 
+# Enables network connection
+sudo systemctl enable --now NetworkManager
+
 # Docker
 if systemctl list-unit-files | grep -q docker.service; then
   sudo systemctl enable --now docker

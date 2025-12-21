@@ -33,9 +33,6 @@ SYSTEM_PKGS=(
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
 
-# Enables network connection
-sudo systemctl enable --now NetworkManager
-
 echo ""
 echo -e "${BLUE}==========================${RESET}"
 echo -e "${GREEN}[ SYSTEM ] Installing yay${RESET}"
