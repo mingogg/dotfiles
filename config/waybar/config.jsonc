@@ -1,5 +1,4 @@
 {
-  "reload_style_on_change": true,
   "layer": "top",
   "position": "bottom",
   "spacing": 0,
@@ -8,16 +7,28 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "clock",
+    "custom/empty",
     "network",
     "pulseaudio",
-    // "cpu",
-    // "battery"
   ],
+
+  "custom/empty": {
+    "format": "  ",
+    "tooltip": false
+  },
+
+  "custom/archLogo": {
+    "format": "  ",
+    "on-click": "~/dotfiles/scripts/menu.sh",
+    "on-click-right": "",
+    "tooltip-format": "Arch Menu\n\nSuper + Alt + Space"
+  },
+
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "default": "",
+      "default": "",
       "1": "1",
       "2": "2",
       "3": "3",
@@ -38,24 +49,12 @@
       "5": []
     }
   },
-  "custom/archLogo": {
-    "format": "  ",
-    "on-click": "~/.config/scripts/menu.sh",
-    "on-click-right": "",
-    "tooltip-format": "Arch Menu\n\nSuper + Alt + Space"
-  },
-
-  "cpu": {
-    "interval": 5,
-    "format": "󰍛",
-    "on-click": "omarchy-launch-or-focus-tui btop"
-  },
 
   "clock": {
     "format": "{:%a %d %b %H:%M} ",
     "tooltip": false,
   },
-
+  
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
@@ -67,19 +66,34 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛",
   },
 
   "battery": {
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
-    "format-plugged": "",
+    "format-plugged": "",
     "format-icons": {
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
@@ -92,39 +106,13 @@
   },
 
   "bluetooth": {
-    "format": "",
+    "format": "",
     "format-disabled": "󰂲",
     "format-off": "󰂲",
     "format-connected": "󰂱",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "omarchy-launch-bluetooth"
-  },
-
-  "pulseaudio": {
-    "format": "{icon}",
-    "on-click": "omarchy-launch-or-focus-tui wiremix",
-    "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", ""]
-    }
-  },
-
-  "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "tray-group-item"
-    },
-    "modules": ["custom/expand-icon", "tray"]
-  },
-
-  "custom/expand-icon": {
-    "format": " ",
-    "tooltip": false
   },
 
   "tray": {
