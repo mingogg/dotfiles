@@ -27,6 +27,7 @@ SYSTEM_PKGS=(
   git                           # clone PKGBUILDs
   docker                        # container engine
   docker-compose                # compose support
+  ttf-nerd-fonts-symbols        # symbols render
   )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
