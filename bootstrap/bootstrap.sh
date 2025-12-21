@@ -70,13 +70,17 @@ sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 
 # APPS - essential user tools from AUR
 AUR_APPS_PKGS=(
-  brave-bin           # web browser
-  postman-bin         # testing APIs
   lazydocker          # terminal UI for managing Docker containers
   walker              # app launcher
   )
 
+AUR_APPS_PKGS_2=(
+  brave-bin           # web browser
+  postman-bin         # testing APIs
+  )
+
 yay -S --needed --noconfirm "${AUR_APPS_PKGS[@]}"
+yay -S --needed --noconfirm "${AUR_APPS_PKGS_2[@]}"
 
 echo ""
 echo -e "${BLUE}=================================${RESET}"
