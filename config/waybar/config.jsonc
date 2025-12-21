@@ -18,7 +18,7 @@
   },
 
   "custom/archLogo": {
-    "format": "  ",
+    "format": "  ",
     "on-click": "~/dotfiles/scripts/menu.sh",
     "on-click-right": "",
     "tooltip-format": "Arch Menu\n\nSuper + Alt + Space"
@@ -76,7 +76,7 @@
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", "", ""]
     }
   },
 
@@ -106,7 +106,7 @@
   },
 
   "bluetooth": {
-    "format": "",
+    "format": "",
     "format-disabled": "󰂲",
     "format-off": "󰂲",
     "format-connected": "󰂱",
