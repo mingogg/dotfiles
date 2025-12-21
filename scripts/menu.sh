@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPTS_DIR="$HOME/dotfiles/scripts"
+SCRIPTS_DIR="$HOME/.config/scripts"
 
 options=$(cat <<EOF
   Style: Change Theme

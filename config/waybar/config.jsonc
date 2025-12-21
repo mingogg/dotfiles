@@ -58,6 +58,7 @@
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
+    "on-click": "~/.config/scripts/launch_tui.sh wifi nmtui"
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
@@ -70,7 +71,7 @@
 
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "",
+    "on-click": "~/.config/scripts/launch_tui.sh audio wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -83,6 +84,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
+    "on-click": "~/.config/scripts/launch_tui.sh sys btop"
   },
 
   "battery": {
