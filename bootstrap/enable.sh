@@ -25,4 +25,4 @@ fi
 bash ~/dotfiles/scripts/relaunch_apps.sh
 
 # Ly (login manager)
-sydo systemctl enable ly@tty1.service
+sudo systemctl enable ly@tty1.service
