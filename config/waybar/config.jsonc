@@ -8,14 +8,10 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "clock",
-    "custom/update",
-    "custom/screenrecording-indicator",
-    //"group/tray-expander",
-    "bluetooth",
     "network",
     "pulseaudio",
-    "cpu",
-    "battery"
+    // "cpu",
+    // "battery"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -44,17 +40,9 @@
   },
   "custom/archLogo": {
     "format": "  ",
-    "on-click": "~/dotfiles/scripts/menu.sh",
+    "on-click": "~/.config/scripts/menu.sh",
     "on-click-right": "",
     "tooltip-format": "Arch Menu\n\nSuper + Alt + Space"
-  },
-  "custom/update": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 3600
   },
 
   "cpu": {
@@ -62,12 +50,12 @@
     "format": "󰍛",
     "on-click": "omarchy-launch-or-focus-tui btop"
   },
+
   "clock": {
-    "format": "{:L%A %H:%M} ",
-    "format-alt": "{:L%d %B W%V %Y} ",
+    "format": "{:%a %d %b %H:%M} ",
     "tooltip": false,
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
+
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
@@ -81,6 +69,7 @@
     "spacing": 1,
     "on-click": "omarchy-launch-wifi"
   },
+
   "battery": {
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
@@ -90,6 +79,7 @@
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
+
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
@@ -100,6 +90,7 @@
       "critical": 10
     }
   },
+
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
@@ -109,6 +100,7 @@
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "omarchy-launch-bluetooth"
   },
+
   "pulseaudio": {
     "format": "{icon}",
     "on-click": "omarchy-launch-or-focus-tui wiremix",
@@ -120,6 +112,7 @@
       "default": ["", "", ""]
     }
   },
+
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
@@ -128,16 +121,12 @@
     },
     "modules": ["custom/expand-icon", "tray"]
   },
+
   "custom/expand-icon": {
     "format": " ",
     "tooltip": false
   },
-  "custom/screenrecording-indicator": {
-    "on-click": "omarchy-cmd-screenrecord",
-    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-    "signal": 8,
-    "return-type": "json"
-  },
+
   "tray": {
     "icon-size": 12,
     "spacing": 12

@@ -46,6 +46,9 @@ mkdir -p "$CONFIG_DIR"
 safe_link "$DOTFILES_DIR/theme" "$CONFIG_DIR/theme"
 safe_link "$DOTFILES_DIR/theme/default" "$CONFIG_DIR/theme/current"
 
+# Custom links
+safe_link "$DOTFILES_DIR/scripts" "$CONFIG_DIR/scripts"
+
 # Hyprland
 safe_link "$DOTFILES_DIR/config/hypr" "$CONFIG_DIR/hypr"
 
