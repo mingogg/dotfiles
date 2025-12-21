@@ -62,8 +62,7 @@ APPS_PKGS=(
   nautilus            # file manager
   wl-clipboard        # clipboard (Wayland)
   hyprshot            # screenshot utility
-  greetd              # login manager
-  greetd-tuigreet     # frontend for login manager
+  ly                  # login manager
   )
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"

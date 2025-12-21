@@ -68,5 +68,5 @@ safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
 
 
 echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
-# Greetd (login manager)
-safe_link_root "$DOTFILES_DIR/config/greetd/config.toml" "/etc/greetd/config.toml"
+# Ly (login manager)
+safe_link_root "$DOTFILES_DIR/config/ly/config.ini" "/etc/ly/config.ini"

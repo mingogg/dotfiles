@@ -24,5 +24,5 @@ fi
 # Re-launch apps to apply theme for the first time
 bash ~/dotfiles/scripts/relaunch_apps.sh
 
-# Greetd (login manager)
-systemctl enable greetd
+# Ly (login manager)
+sydo systemctl enable ly@tty1.service
