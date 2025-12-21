@@ -28,7 +28,8 @@ SYSTEM_PKGS=(
   docker                        # container engine
   docker-compose                # compose support
   ttf-nerd-fonts-symbols        # symbols render
-  )
+  btop                          # resource monitor
+)
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
 
@@ -64,7 +65,7 @@ APPS_PKGS=(
   wl-clipboard        # clipboard (Wayland)
   hyprshot            # screenshot utility
   ly                  # login manager
-  )
+)
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 
@@ -72,15 +73,11 @@ sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 AUR_APPS_PKGS=(
   lazydocker          # terminal UI for managing Docker containers
   walker              # app launcher
-  )
-
-AUR_APPS_PKGS_2=(
   brave-bin           # web browser
   postman-bin         # testing APIs
-  )
+)
 
 yay -S --needed --noconfirm "${AUR_APPS_PKGS[@]}"
-yay -S --needed --noconfirm "${AUR_APPS_PKGS_2[@]}"
 
 echo ""
 echo -e "${BLUE}=================================${RESET}"
@@ -93,7 +90,7 @@ UX_PKGS=(
   waybar                # status bar
   mako                  # notification daemon
   swaybg                # wallpaper manager
-  )
+)
 
 sudo pacman -S --needed --noconfirm "${UX_PKGS[@]}"
 
@@ -102,8 +99,6 @@ bash "$SCRIPT_DIR/link.sh"
 
 # Enables needed for the system to work
 bash "$SCRIPT_DIR/enable.sh"
-
-hyprctl reload
 
 echo ""
 echo -e "${BLUE}===================================${RESET}"

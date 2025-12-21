@@ -52,13 +52,16 @@
 
   "clock": {
     "format": "{:%a %d %b %H:%M} ",
-    "tooltip": false,
+    "tooltip-format": "{calendar}",
+    "calendar":{
+      "mode": "month"
+    }
   },
-  
+
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "on-click": "~/.config/scripts/launch_tui.sh wifi nmtui"
+    "on-click": "~/.config/scripts/launch_tui.sh wifi nmtui",
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
@@ -73,9 +76,9 @@
     "format": "{icon}",
     "on-click": "~/.config/scripts/launch_tui.sh audio wiremix",
     "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
+    "tooltip-format": "Volume: {volume}%",
     "scroll-step": 5,
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
       "default": ["", "", ""]
     }
@@ -91,7 +94,7 @@
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
     "format-charging": "{icon}",
-    "format-plugged": "",
+    "format-plugged": "",
     "format-icons": {
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
       "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -100,7 +103,7 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    "on-click": "omarchy-menu power",
+    "on-click": "",
     "states": {
       "warning": 20,
       "critical": 10
@@ -114,7 +117,7 @@
     "format-connected": "󰂱",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "omarchy-launch-bluetooth"
+    "on-click": ""
   },
 
   "tray": {
