@@ -25,6 +25,6 @@ fi
 bash ~/dotfiles/scripts/relaunch_apps.sh
 
 # Ly (login manager)
-sudo systemctl disable gett@tty1.service
-sudo systemctl enable gett@tty2.service
+sudo systemctl disable getty@tty1.service
+sudo systemctl enable getty@tty2.service
 sudo systemctl enable ly@tty1.service

@@ -46,6 +46,9 @@ if ! command -v yay >/dev/null 2>&1; then
   cd /tmp/yay || exit 1
   makepkg -si --noconfirm
   cd -
+else
+  echo ""
+  echo -e "${GREEN}[ SYSTEM ] yay already installed${RESET}"
 fi
 
 [ -d /tmp/yay ] && rm -rf /tmp/yay
@@ -87,14 +90,14 @@ done
 
 if [ "${#AUR_MISSING_PKGS[@]}" -gt 0 ]; then
   echo ""
-  echo -e "${GREEN} [ AUR ] Installing missing packages:${RESET}"
+  echo -e "${GREEN}[ AUR ] Installing missing packages:${RESET}"
   printf ' - %s\n' "${AUR_MISSING_PKGS[@]}"
   echo ""
 
   yay -S --needed --noconfirm "${AUR_MISSING_PKGS[@]}"
 else
   echo ""
-  echo -e "${GREEN} [ AUR ] All AUR packages are already installed${RESET}"
+  echo -e "${GREEN}[ AUR ] All AUR packages are already installed${RESET}"
 fi
 
 echo ""
