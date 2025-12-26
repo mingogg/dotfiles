@@ -1,18 +1,17 @@
-@define-color foreground #8a8a8d;
 @define-color background #1e1e1e;
+@define-color foreground #8a8a8d;
+@define-color primary #1793d1;
+@define-color accentLogo #66d9ff;
+@define-color disabled #5a5a5a;
 
 * {
   background-color: rgba(30, 30, 30, 0.85);
-  color: @foreground;
 
   border: none;
   border-radius: 0;
   min-height: 0;
   font-family: 'CaskaydiaMono Nerd Font';
   font-size: 16px;
-
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
-  background: linear-gradient(to bottom, rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.7));
 }
 
 .modules-left {
@@ -23,62 +22,56 @@
   margin-right: 8px;
 }
 
+#custom-logo:hover {
+  color: @accentLogo
+}
+
+#workspaces button.active,
+#workspaces button.focused,
+#worksapces button:hover,
+#custom-logo,
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#cpu:hover {
+  color: @primary
+}
+
+#cpu,
+#battery,
+#network,
+#clock,
+#pulseaudio {
+  min-width: 12px;
+  margin: 0 7.5px;
+
+  color: @foreground;
+}
+
 #workspaces button {
   all: initial;
   padding: 12px 6px;
   margin: 0 1.5px;
   min-width: 9px;
 
-  color: #8a8a8d;
+  color: @foreground;
   background: transparent;
   transition: color 0.2s ease, background 0.2s ease;
-}
-
-#workspaces button.focused {
-  color: #1793d1;
-}
-
-#workspaces button:hover {
-  color: #4fb0f7;
 }
 
 #workspaces button.empty {
   opacity: 0.5;
 }
 
-#cpu,
-#battery,
-#pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
-
-  color: #8a8a8d;
-}
-#cpu:hover,
-#battery:hover,
-#network:hover {
-  color: #1793d1;
-}
-
 #tray {
   margin-right: 16px;
-  background: rgba(0, 0, 0, 0);
 }
 
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-tooltip {
-  padding: 2px;
-}
-
+#bluetooth,
+#network,
 #clock {
-  margin-left: 8.75px;
+  margin-right: 7.75px;
 }
 
 .hidden {

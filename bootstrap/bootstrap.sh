@@ -47,7 +47,6 @@ if ! command -v yay >/dev/null 2>&1; then
   makepkg -si --noconfirm
   cd -
 else
-  echo ""
   echo -e "${GREEN}[ SYSTEM ] yay already installed${RESET}"
 fi
 
