@@ -2,7 +2,7 @@
 @define-color background #1e1e1e;
 
 * {
-  background-color: @background;
+  background-color: rgba(30, 30, 30, 0.85);
   color: @foreground;
 
   border: none;
@@ -10,6 +10,9 @@
   min-height: 0;
   font-family: 'CaskaydiaMono Nerd Font';
   font-size: 16px;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
+  background: linear-gradient(to bottom, rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.7));
 }
 
 .modules-left {
@@ -25,6 +28,18 @@
   padding: 12px 6px;
   margin: 0 1.5px;
   min-width: 9px;
+
+  color: #8a8a8d;
+  background: transparent;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+#workspaces button.focused {
+  color: #1793d1;
+}
+
+#workspaces button:hover {
+  color: #4fb0f7;
 }
 
 #workspaces button.empty {
@@ -33,16 +48,21 @@
 
 #cpu,
 #battery,
-#pulseaudio,
-#custom-omarchy,
-#custom-screenrecording-indicator,
-#custom-update {
+#pulseaudio {
   min-width: 12px;
   margin: 0 7.5px;
+
+  color: #8a8a8d;
+}
+#cpu:hover,
+#battery:hover,
+#network:hover {
+  color: #1793d1;
 }
 
 #tray {
   margin-right: 16px;
+  background: rgba(0, 0, 0, 0);
 }
 
 #bluetooth {
@@ -53,16 +73,8 @@
   margin-right: 13px;
 }
 
-#custom-expand-icon {
-  margin-right: 18px;
-}
-
 tooltip {
   padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
 }
 
 #clock {
@@ -71,14 +83,4 @@ tooltip {
 
 .hidden {
   opacity: 0;
-}
-
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
 }
