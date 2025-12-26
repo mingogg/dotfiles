@@ -78,7 +78,24 @@ AUR_APPS_PKGS=(
   postman-bin         # testing APIs
 )
 
-yay -S --needed --noconfirm "${AUR_APPS_PKGS[@]}"
+AUR_MISSING_PKGS=()
+for pkg in "${AUR_APPS_PKGS[@]}"; do
+  if ! pacman -Qi "$pkg" &>/dev/null; then
+    AUR_MISSING_PKGS+=("$pkg")
+  fi
+done
+
+if [ "${#AUR_MISSING_PKGS[@]}" -gt 0 ]; then
+  echo ""
+  echo -e "${GREEN} [ AUR ] Installing missing packages:${RESET}"
+  printf ' - %s\n' "${AUR_MISSING_PKGS[@]}"
+  echo ""
+
+  yay -S --needed --noconfirm "${AUR_MISSING_PKGS[@]}"
+else
+  echo ""
+  echo -e "${GREEN} [ AUR ] All AUR packages are already installed${RESET}"
+fi
 
 echo ""
 echo -e "${BLUE}=================================${RESET}"
