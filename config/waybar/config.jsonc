@@ -52,7 +52,7 @@
   },
 
   "clock": {
-    "format": "{:%a %d %b %H:%M}",
+    "format": "{:%a %d - %H:%M}",
     "tooltip": false
   },
 
