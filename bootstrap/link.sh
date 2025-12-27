@@ -77,4 +77,4 @@ safe_link_root "$CONFIG_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
 safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
 
 # Mako
-safe_link "$CONFIG_DIR/theme/current/colors/makoColors" "$CONFIG_DIR/mako/config"
+safe_link "$CONFIG_DIR/theme/current/mako/config" "$CONFIG_DIR/mako/config"
