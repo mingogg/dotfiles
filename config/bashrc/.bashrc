@@ -185,4 +185,19 @@ function openDirectory() {
     fi
 }
 
+if [ -f ~/.config/theme/current/colors/bash_colors.sh ]; then
+    source ~/.config/theme/current/colors/bash_colors.sh
+fi
+
+git_prompt() {
+    if git rev-parse --is-inside-work-tree &>/dev/null; then
+        if [[ -n $(git status --porcelain) ]]; then
+            echo -n "${GIT_DIRTY}●${RESET}"
+        else
+            echo -n "${GIT_CLEAN}●${RESET}"
+        fi
+    fi
+}
+PS1="${PRIMARY}\u${FG}@${ACCENT}\h ${FG}\w $(git_prompt)${RESET} \$ "
+
 export PATH="$PATH:$HOME/.npm-global/bin"
