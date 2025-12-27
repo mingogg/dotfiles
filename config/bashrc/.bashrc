@@ -189,9 +189,16 @@ if [ -f ~/.config/theme/current/colors/bashColors.sh ]; then
     source ~/.config/theme/current/colors/bashColors.sh
 fi
 
+if [ -f ~/.config/theme/current/colors/bashColors.sh ]; then
+    source ~/.config/theme/current/colors/bashColors.sh
+fi
+
 parse_git_info() {
     if git rev-parse --is-inside-work-tree &>/dev/null; then
         local branch status added modified untracked
+        local start=$'\001'
+        local end=$'\002'
+        
         status=$(git status --porcelain 2>/dev/null)
         if [[ -n "$status" ]]; then
             branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
@@ -199,12 +206,13 @@ parse_git_info() {
             modified=$(echo "$status" | grep '^ M' | wc -l)
             untracked=$(echo "$status" | grep '^??' | wc -l)
 
-            printf "${FG}git:%s ${GIT_DIRTY}✘${FG}" "$branch"
+            printf "${start}${FG}${end}git:%s ${start}${GIT_DIRTY}${end}✘${start}${FG}${end}" "$branch"
             [[ $modified -gt 0 ]] && printf " ~$modified"
             [[ $untracked -gt 0 ]] && printf " ?$untracked"
         fi
     fi
+}
 
-PS1="\n[${RESET}\u@\h ${FG}\w${RESET}\$(parse_git_info)${RESET}]\n${PRIMARY}󰣇 ${RESET} "
+PS1="\n[\[${RESET}\]\u@\h \[${FG}\]\w\[${RESET}\]\$(parse_git_info)\[${RESET}\]]\n\[${PRIMARY}\]󰣇 \[${RESET}\] "
 
 export PATH="$PATH:$HOME/.npm-global/bin"
