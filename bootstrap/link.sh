@@ -85,3 +85,6 @@ safe_link "$CONFIG_DIR/theme/current/mako" "$CONFIG_DIR/mako"
 
 # btop
 safe_link "$CONFIG_DIR/theme/current/btop" "$CONFIG_DIR/btop"
+
+# wiremix
+safe_link "$CONFIG_DIR/theme/current/wiremix" "$CONFIG_DIR/wiremix"
