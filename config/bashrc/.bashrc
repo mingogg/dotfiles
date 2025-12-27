@@ -1,4 +1,4 @@
-# Aliases to open files, directories & workspaces
+#asda Aliases to open files, directories & workspaces
 alias of="openFile"
 alias od="openDirectory"
 alias ow=~/dev/scripts/ws_launcher.sh
@@ -199,13 +199,14 @@ parse_git_info() {
             modified=$(echo "$status" | grep '^ M' | wc -l)
             untracked=$(echo "$status" | grep '^??' | wc -l)
 
-            echo -n " ${FG}git:${branch} ${GIT_DIRTY}✘${FG}"
-            [[ $modified -gt 0 ]] && echo -n " ~$modified"
-            [[ $untracked -gt 0 ]] && echo -n " ?$untracked"
+            # Usamos printf para que Bash interprete las secuencias
+            printf " ${FG}git:%s ${GIT_DIRTY}✘${FG}" "$branch"
+            [[ $modified -gt 0 ]] && printf " ~$modified"
+            [[ $untracked -gt 0 ]] && printf " ?$untracked"
         fi
     fi
 }
 
-PS1="\n[${FG}\u@\h${RESET} ${FG}\w\$(parse_git_info)]\n${PRIMARY}󰣇 ${RESET} "
+PS1="\n[${FG}\u@\h ${FG}\w\$(parse_git_info)]\n${PRIMARY}󰣇 ${RESET} "
 
 export PATH="$PATH:$HOME/.npm-global/bin"
