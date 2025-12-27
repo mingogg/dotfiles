@@ -191,22 +191,28 @@ fi
 
 parse_git_info() {
     if git rev-parse --is-inside-work-tree &>/dev/null; then
-        local branch status added modified untracked
+        local branch status added modified untracked output
         status=$(git status --porcelain 2>/dev/null)
+        branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+
+        output="${RESET}git:${branch} "
+
         if [[ -n "$status" ]]; then
-            branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
-            added=$(echo "$status" | grep '^A' | wc -l)
             modified=$(echo "$status" | grep '^ M' | wc -l)
             untracked=$(echo "$status" | grep '^??' | wc -l)
+            
+            if [[ -n "$status" ]]; then
+                output+="${GIT_DIRTY}✘${RESET} "
+            fi
 
-            # Usamos printf para que Bash interprete las secuencias
-            printf " ${FG}git:%s ${GIT_DIRTY}✘${FG}" "$branch"
-            [[ $modified -gt 0 ]] && printf " ~$modified"
-            [[ $untracked -gt 0 ]] && printf " ?$untracked"
+            [[ $modified -gt 0 ]] && output+="${FG}~$modified${RESET} "
+            [[ $untracked -gt 0 ]] && output+="${FG}?$untracked${RESET} "
         fi
+
+        printf "%s" "$output"
     fi
 }
 
-PS1="\n[${FG}\u@\h ${FG}\w\$(parse_git_info)]\n${PRIMARY}󰣇 ${RESET} "
+PS1="\n[${RESET}\u@\h ${FG}\w\$(parse_git_info)${RESET}]\n${PRIMARY}󰣇 ${RESET} "
 
 export PATH="$PATH:$HOME/.npm-global/bin"
