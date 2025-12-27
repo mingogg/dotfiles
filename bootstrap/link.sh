@@ -69,6 +69,9 @@ safe_link "$DOTFILES_DIR/config/walker" "$CONFIG_DIR/walker"
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-3.0" "$CONFIG_DIR/gtk-3.0"
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
 
-echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
 # Ly (login manager)
+echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
 safe_link_root "$DOTFILES_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
+
+# Colors for themes
+safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
