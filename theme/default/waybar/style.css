@@ -22,7 +22,11 @@
 }
 
 #custom-logo:hover {
-  color: @accentLogo
+  color: @accentLogo;
+}
+
+#custom-logo {
+  font-size: 22px;
 }
 
 #workspaces button.active,
@@ -34,7 +38,7 @@
 #bluetooth:hover,
 #pulseaudio:hover,
 #cpu:hover {
-  color: @primary
+  color: @primary;
 }
 
 #cpu,
