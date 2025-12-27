@@ -29,6 +29,10 @@ BLUE="\033[34m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
+# If there is a config folder that's needed from the dotfiles, it goes from
+# ~/dotfile/config to ~/.config/folder, else if there's a THEME needed, it goes from
+# ~/.config/theme/current/folder to ~/.config/folder
+
 REAL_HOME="$HOME"
 CONFIG_DIR="$REAL_HOME/.config"
 DOTFILES_DIR="$REAL_HOME/dotfiles"
@@ -77,4 +81,7 @@ safe_link_root "$CONFIG_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
 safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
 
 # Mako
-safe_link "$CONFIG_DIR/theme/current/mako/config" "$CONFIG_DIR/mako/config"
+safe_link "$CONFIG_DIR/theme/current/mako" "$CONFIG_DIR/mako"
+
+# btop
+safe_link "$CONFIG_DIR/theme/current/btop" "$CONFIG_DIR/btop"
