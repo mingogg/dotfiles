@@ -185,19 +185,27 @@ function openDirectory() {
     fi
 }
 
-if [ -f ~/.config/theme/current/colors/bash_colors.sh ]; then
-    source ~/.config/theme/current/colors/bash_colors.sh
+if [ -f ~/.config/theme/current/colors/bashColors.sh ]; then
+    source ~/.config/theme/current/colors/bashColors.sh
 fi
 
-git_prompt() {
+parse_git_info() {
     if git rev-parse --is-inside-work-tree &>/dev/null; then
-        if [[ -n $(git status --porcelain) ]]; then
-            echo -n "${GIT_DIRTY}●${RESET}"
-        else
-            echo -n "${GIT_CLEAN}●${RESET}"
+        local branch status added modified untracked
+        status=$(git status --porcelain 2>/dev/null)
+        if [[ -n "$status" ]]; then
+            branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+            added=$(echo "$status" | grep '^A' | wc -l)
+            modified=$(echo "$status" | grep '^ M' | wc -l)
+            untracked=$(echo "$status" | grep '^??' | wc -l)
+
+            echo -n " ${FG}git:${branch} ${GIT_DIRTY}✘${FG}"
+            [[ $modified -gt 0 ]] && echo -n " ~$modified"
+            [[ $untracked -gt 0 ]] && echo -n " ?$untracked"
         fi
     fi
 }
-PS1="${PRIMARY}\u${FG}@${ACCENT}\h ${FG}\w $(git_prompt)${RESET} \$ "
+
+PS1="\n[${FG}\u@\h${RESET} ${FG}\w\$(parse_git_info)]\n${PRIMARY}󰣇 ${RESET} "
 
 export PATH="$PATH:$HOME/.npm-global/bin"
