@@ -71,10 +71,10 @@ safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
 
 # Ly (login manager)
 echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
-safe_link_root "$DOTFILES_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
+safe_link_root "$CONFIG_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
 
 # Colors for themes
 safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
 
 # Mako
-safe_link "$DOTFILE_DIR/theme/current/mako" "$CONFIG_DIR/mako"
+safe_link "$CONFIG_DIR/theme/current/colors/makoColors" "$CONFIG_DIR/mako/config"
