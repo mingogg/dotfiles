@@ -75,3 +75,6 @@ safe_link_root "$DOTFILES_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
 
 # Colors for themes
 safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
+
+# Mako
+safe_link "$DOTFILE_DIR/theme/current/mako" "$CONFIG_DIR/mako"
