@@ -5,7 +5,7 @@ return {
     priority = 1000,
     config = function()
       vim.g.tokyonight_style = "night"
-      vim.cmd.coloscheme("tokyonight")
+      vim.cmd.colorscheme("tokyonight")
     end,
 	},
 }
