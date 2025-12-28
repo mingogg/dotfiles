@@ -37,11 +37,9 @@ REAL_HOME="$HOME"
 CONFIG_DIR="$REAL_HOME/.config"
 DOTFILES_DIR="$REAL_HOME/dotfiles"
 
-echo ""
-echo -e "${BLUE}===================================${RESET}"
+echo -e "\n${BLUE}===================================${RESET}"
 echo -e "${GREEN}[ LINK ] applyin dotfiles symlinks${RESET}"
-echo -e "${BLUE}===================================${RESET}"
-echo ""
+echo -e "${BLUE}===================================${RESET}\n"
 
 # Ensure base config directory exists (single source of truth for all symlinks)
 mkdir -p "$CONFIG_DIR"
@@ -88,3 +86,6 @@ safe_link "$CONFIG_DIR/theme/current/btop" "$CONFIG_DIR/btop"
 
 # wiremix
 safe_link "$CONFIG_DIR/theme/current/wiremix" "$CONFIG_DIR/wiremix"
+
+# tmux
+safe_link "$DOTFILES_DIR/config/tmux" "$CONFIG_DIR/tmux"

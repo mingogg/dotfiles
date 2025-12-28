@@ -4,11 +4,9 @@ BLUE="\033[34m"
 GREEN="\033[32m"
 RESET="\033[0m"
 
-echo ""
-echo -e "${BLUE}====================================${RESET}"
+echo -e "\n${BLUE}====================================${RESET}"
 echo -e "${GREEN}[ ENABLE ] Enabling system services${RESET}"
-echo -e "${BLUE}====================================${RESET}"
-echo ""
+echo -e "${BLUE}====================================${RESET}\n"
 
 # Enables network connection
 sudo systemctl enable --now NetworkManager

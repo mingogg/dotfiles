@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Use:
+# Usage:
 # launch_tui.sh audio wiremix
 # launch_tui.sh wifi nmtui
 # launch_tui.sh sys btop
