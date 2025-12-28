@@ -1,8 +1,6 @@
-
 @define-color background #1e1e1e;
 @define-color foreground #8a8a8d;
 @define-color disabled #5a5a5a;
 
-@define-color primary #1793d1;
-@define-color accentLogo #66d9ff;
-
+@define-color primary #e67e22;
+@define-color accentLogo #f5b041;
