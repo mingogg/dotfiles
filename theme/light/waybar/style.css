@@ -1,0 +1,76 @@
+@import "../colors/colors.css";
+
+* {
+  background-color: @background;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'CaskaydiaMono Nerd Font';
+  font-size: 16px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#custom-logo:hover {
+  color: @accentLogo;
+}
+
+#custom-logo {
+  font-size: 26px;
+}
+
+#workspaces button.active,
+#workspaces button.focused,
+#workspaces button:hover,
+#custom-logo,
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#cpu:hover {
+  color: @primary;
+}
+
+#cpu,
+#battery,
+#network,
+#clock,
+#pulseaudio {
+  min-width: 12px;
+  margin: 0 7.5px;
+
+  color: @foreground;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 12px 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+
+  color: @foreground;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#tray {
+  margin-right: 16px;
+}
+
+#bluetooth,
+#network,
+#clock {
+  margin-right: 7.75px;
+}
+
+.hidden {
+  opacity: 0;
+}
