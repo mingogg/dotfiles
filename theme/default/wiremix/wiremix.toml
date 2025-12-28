@@ -2,5 +2,5 @@ theme = "current"
 
 [themes]
   [themes.current]
-  tab_marker = {fg = "#1793d1"}
-  tab_selected = {fg = "#66d9ff"}
+  tab_marker = {fg = "#1793d1"} # primary color
+  tab_selected = {fg = "#66d9ff"} # accent color
