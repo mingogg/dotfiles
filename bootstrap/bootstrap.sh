@@ -9,6 +9,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Ensure system time is correct (required for SSL / git / AUR)
 sudo timedatectl set-ntp true
 
+# Force the update of the database
+sudo pacman -Syy
+
 echo ""
 echo -e "${BLUE}=====================================${RESET}"
 echo -e "${GREEN}[ SYSTEM ] Installing infrastructure${RESET}"
