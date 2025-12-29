@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-SCRIPTS_DIR="$HOME/.config/scripts"
-
 options=$(cat <<EOF
   Style: Change Theme
   System: Logout
@@ -16,7 +14,7 @@ selected=$(echo "$options" | walker -d -p "Search...")
 
 case "$selected" in
   "Style: Change Theme")
-    "$SCRIPTS_DIR/change_theme.sh"
+    change-theme
     ;;
   "System: Logout")
     hyprctl dispatch exit

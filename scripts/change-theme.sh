@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 THEMES_DIR="$HOME/dotfiles/theme"
-SCRIPT_DIR="$HOME/dotfiles/scripts"
 CURRENT_LINK="$HOME/.config/theme/current"
 
 # List all themes and select with walker, except 'current'
@@ -16,4 +15,4 @@ selected_theme=$(
 ln -sfn "$THEMES_DIR/$selected_theme" "$CURRENT_LINK"
 
 # Hotreload
-bash "$SCRIPT_DIR/relaunch_apps.sh"
+relaunch-apps

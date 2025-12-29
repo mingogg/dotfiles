@@ -216,3 +216,4 @@ parse_git_info() {
 PS1="\n[\[${RESET}\]\u@\h \[${FG}\]\w\[${RESET}\]\$(parse_git_info)\[${RESET}\]]\n\[${PRIMARY}\] 󰣇 \[${RESET}\] "
 
 export PATH="$PATH:$HOME/.npm-global/bin"
+export PATH="$HOME/.local/bin:$PATH"
