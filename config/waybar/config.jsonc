@@ -57,7 +57,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/updates.sh",
-    "on-click": "~/.config/scripts/launch_tui.sh updates yay",
+    "on-click": "launch-tui updates yay",
     "restart-interval": 300
   },
 
@@ -69,7 +69,7 @@
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
-    "on-click": "~/.config/scripts/launch_tui.sh wifi nmtui",
+    "on-click": "launch-tui wifi nmtui",
     "format-wifi": "{icon}",
     "format-ethernet": "󰀂",
     "format-disconnected": "󰤮",
@@ -82,7 +82,7 @@
 
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "~/.config/scripts/launch_tui.sh audio wiremix",
+    "on-click": "launch-tui audio wiremix",
     "on-click-right": "pamixer -t",
     "tooltip-format": "Volume: {volume}%",
     "scroll-step": 5,
@@ -95,7 +95,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "~/.config/scripts/launch_tui.sh sys btop"
+    "on-click": "launch-tui sys btop"
   },
 
   "battery": {

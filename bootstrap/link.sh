@@ -48,9 +48,6 @@ mkdir -p "$CONFIG_DIR"
 safe_link "$DOTFILES_DIR/theme" "$CONFIG_DIR/theme"
 safe_link "$DOTFILES_DIR/theme/default" "$CONFIG_DIR/theme/current"
 
-# Custom links
-safe_link "$DOTFILES_DIR/scripts" "$CONFIG_DIR/scripts"
-
 # Hyprland
 safe_link "$DOTFILES_DIR/config/hypr" "$CONFIG_DIR/hypr"
 
@@ -59,7 +56,7 @@ safe_link "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
 
 # Waybar
 safe_link "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybar"
-safe_link "$CONFIG_DIR/theme/current/waybar/style.css" "$CONFIG_DIR/waybar/style.css"
+safe_link "$CONFIG_DIR/theme/current/colors/colors.css" "$CONFIG_DIR/waybar/colors.css"
 
 # BASH
 safe_link "$DOTFILES_DIR/config/bashrc/.bashrc" "$HOME/.bashrc"
@@ -92,3 +89,11 @@ safe_link "$DOTFILES_DIR/config/tmux" "$CONFIG_DIR/tmux"
 
 # alacritty
 safe_link "$DOTFILES_DIR/config/alacritty" "$CONFIG_DIR/alacritty"
+
+# scripts executables in path
+mkdir -p "$HOME/.local/bin"
+for script in ~/dotfiles/scripts/*.sh; do
+  [ -e "$script" ] || continue
+  name=$(basename "$script" .sh)
+  ln -sf "$script" "$HOME/.local/bin/$name"
+done
