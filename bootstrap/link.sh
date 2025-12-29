@@ -89,3 +89,6 @@ safe_link "$CONFIG_DIR/theme/current/wiremix" "$CONFIG_DIR/wiremix"
 
 # tmux
 safe_link "$DOTFILES_DIR/config/tmux" "$CONFIG_DIR/tmux"
+
+# alacritty
+safe_link "$DOTFILES_DIR/config/alacritty" "$CONFIG_DIR/alacritty"
