@@ -29,6 +29,7 @@ SYSTEM_PKGS=(
   git                           # clone PKGBUILDs
   ttf-nerd-fonts-symbols        # symbols render
   ttf-jetbrains-mono-nerd       # system font
+  pacman-contrib                # tools to enhance pacman
 )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"

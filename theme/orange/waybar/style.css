@@ -5,7 +5,6 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font Mono';
   font-size: 16px;
 }
 
@@ -17,6 +16,7 @@
   margin-right: 8px;
 }
 
+#custom-updates:hover,
 #custom-logo:hover {
   color: @accentLogo;
 }
@@ -33,6 +33,7 @@
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
+#custom-updates,
 #cpu:hover {
   color: @primary;
 }

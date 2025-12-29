@@ -6,6 +6,7 @@
   "modules-left": ["custom/logo"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
+    "custom/updates",
     "clock",
     "bluetooth",
     "network",
@@ -49,6 +50,15 @@
       "4": [],
       "5": []
     }
+  },
+
+  "custom/updates": {
+    "format": "  {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/scripts/updates.sh",
+    "on-click": "~/.config/scripts/launch_tui.sh updates yay",
+    "restart-interval": 300
   },
 
   "clock": {

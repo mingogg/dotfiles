@@ -5,6 +5,8 @@
 # launch_tui.sh wifi nmtui
 # launch_tui.sh sys btop
 
+# To change the size of the tui see ~/dotfiles/config/hypr/windowrules.conf
+
 ROLE="$1"
 shift
 
