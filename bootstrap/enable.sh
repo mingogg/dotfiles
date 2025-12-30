@@ -20,7 +20,7 @@ if systemctl list-unit-files | grep -q docker.service; then
 fi
 
 # Re-launch apps to apply theme for the first time
-bash ~/dotfiles/scripts/relaunch_apps.sh
+relaunch-apps
 
 # Ly (login manager)
 sudo systemctl disable getty@tty1.service
