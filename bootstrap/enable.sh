@@ -8,6 +8,9 @@ echo -e "\n${BLUE}====================================${RESET}"
 echo -e "${GREEN}[ ENABLE ] Enabling system services${RESET}"
 echo -e "${BLUE}====================================${RESET}\n"
 
+# Sources bashrc configs
+source ~/.bashrc
+
 # Enables network connection
 sudo systemctl enable --now NetworkManager
 
