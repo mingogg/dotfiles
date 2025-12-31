@@ -30,6 +30,9 @@ SYSTEM_PKGS=(
   ttf-nerd-fonts-symbols        # symbols render
   ttf-jetbrains-mono-nerd       # system font
   pacman-contrib                # tools to enhance pacman
+  python                        # python 3 interpreter
+  python-pip                    # python pkg manager
+  python-pipx                   # python pkg manager for isolated Python apps (i.e., tte)
 )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
@@ -79,6 +82,7 @@ AUR_APPS_PKGS=(
   walker              # app launcher
   brave-bin           # web browser
   postman-bin         # testing APIs
+  xdg-terminal-exec   # utility (screensaver uses it)
 )
 
 AUR_MISSING_PKGS=()
@@ -97,3 +101,5 @@ if [ "${#AUR_MISSING_PKGS[@]}" -gt 0 ]; then
 else
   echo -e "\n${GREEN}[ AUR ] All AUR packages are already installed${RESET}"
 fi
+
+pipx install terminaltexteffects # terminal effects for the screensaver
