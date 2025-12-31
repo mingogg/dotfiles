@@ -22,9 +22,9 @@ case "$selected" in
     hyprctl dispatch exit
     ;;
   "System: Reboot")
-    systemctl reboot
+    safeBraveReboot
     ;;
   "System: Shutdown")
-    systemctl poweroff
+    safeBravePoweroff
     ;;
 esac

@@ -2,6 +2,8 @@
 alias of="openFile"
 alias od="openDirectory"
 alias ow=~/dev/scripts/ws_launcher.sh
+alias reboot="safeBraveReboot"
+alias poweroff="safeBravePoweroff"
 
 # Exclude these directories from the search
 EXCLUDED=(
