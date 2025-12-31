@@ -205,11 +205,11 @@ parse_git_info() {
             modified=$(echo "$status" | grep '^ M' | wc -l)
             untracked=$(echo "$status" | grep '^??' | wc -l)
 
-            printf " | git:%s ${start}${GIT_DIRTY}${end}✘${start}${FG}${end}" "$branch"
+            printf " | git:%s ${start}${GIT_DIRTY}${end}✘ ${start}${FG}${end}" "$branch"
             [[ $modified -gt 0 ]] && printf " ~$modified"
             [[ $untracked -gt 0 ]] && printf " ?$untracked"
         else
-            printf " | git:%s ${start}${ACCENT}${end}✔${start}${FG}${end}" "$branch"
+            printf " | git:%s ${start}${PRIMARY}${end}✔ ${start}${FG}${end}" "$branch"
         fi
     fi
 }
