@@ -16,8 +16,11 @@ shift
 CLASS="tui-$ROLE"
 TITLE="$ROLE"
 
-alacritty \
-  --class "$CLASS" \
-  --title "$TITLE" \
-  -e "$@"
-
+if hyprctl clients -j | jq -e ".[] | select(.class == \"$CLASS\")" > /dev/null; then
+    hyprctl dispatch focuswindow "class:^${CLASS}$"
+else
+    alacritty \
+      --class "$CLASS" \
+      --title "$TITLE" \
+      -e "$@"
+fi
