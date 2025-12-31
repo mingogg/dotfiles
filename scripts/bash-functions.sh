@@ -209,7 +209,7 @@ parse_git_info() {
             [[ $modified -gt 0 ]] && printf " ~$modified"
             [[ $untracked -gt 0 ]] && printf " ?$untracked"
         else
-            printf " | git:%s ${start}${PRIMARY}${end}✓ ${start}${FG}${end}" "$branch"
+            printf " | git:%s ${start}${PRIMARY}${end}✔ ${start}${FG}${end}" "$branch"
         fi
     fi
 }
