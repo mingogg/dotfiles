@@ -8,12 +8,9 @@
   font-size: 16px;
 }
 
+.modules-right,
 .modules-left {
   margin-left: 8px;
-}
-
-.modules-right {
-  margin-right: 8px;
 }
 
 #custom-updates:hover,
@@ -68,8 +65,22 @@
 
 #bluetooth,
 #network,
+#cpu {
+  margin-right: 7px;
+}
+
+#custom-updates {
+  font-size: 15px;
+}
+
+#custom-updates,
+#pulseaudio {
+  margin-right: 9px;
+}
+
 #clock {
-  margin-right: 7.75px;
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 .hidden {

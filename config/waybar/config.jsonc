@@ -7,11 +7,11 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "custom/updates",
-    "clock",
     "bluetooth",
     "network",
     "pulseaudio",
     "cpu",
+    "clock",
   ],
 
   "custom/empty": {
@@ -53,7 +53,7 @@
   },
 
   "custom/updates": {
-    "format": "  {}",
+    "format": "{} ",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/updates.sh",
@@ -62,8 +62,8 @@
   },
 
   "clock": {
-    "format": "{:%a %d - %H:%M}",
-    "tooltip": false
+    "format": "          {:%H:%M\n%d/%m/%Y}",
+    "tooltip": false,
   },
 
   "network": {
