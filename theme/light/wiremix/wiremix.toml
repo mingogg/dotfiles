@@ -1,6 +1,17 @@
 theme = "current"
+# primary = #ffffff
+# accent = #e6e6e6
 
 [themes]
   [themes.current]
-  tab_marker = {fg = "#ffffff"} # primary color
-  tab_selected = {fg = "#e6e6e6"} # accent color
+  # primary color
+  selector = { fg = "#ffffff" }
+  tab_marker = {  fg = "#ffffff" }
+  volume_filled = { fg = "#ffffff" }
+  meter_active = { fg = "#ffffff" }
+  meter_center_active = { fg = "#ffffff" }
+  dropdown_border = { fg = "#ffffff" }
+
+  # accent color
+  dropdown_selected  = { fg = "#e6e6e6", add_modifier = "REVERSED" }
+  tab_selected = { fg = "#e6e6e6" }
