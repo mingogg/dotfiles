@@ -69,6 +69,7 @@
   margin-right: 7px;
 }
 
+
 #custom-updates {
   font-size: 15px;
 }
@@ -78,6 +79,12 @@
   margin-right: 9px;
 }
 
+#network,
+#cpu {
+  font-size: 17px;
+}
+
+#pulseaudio,
 #clock {
   margin-left: 5px;
   font-size: 14px;
