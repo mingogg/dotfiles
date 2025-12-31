@@ -5,6 +5,6 @@
 # automatically
 
 killall brave
-sleep 2
+sleep 0.5
 
 /usr/bin/poweroff
