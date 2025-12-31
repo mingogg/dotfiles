@@ -57,7 +57,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/updates.sh",
-    "on-click": "launch-tui updates yay",
+    "on-click": "launch-tui update update-all",
     "restart-interval": 300
   },
 
