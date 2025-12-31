@@ -197,9 +197,10 @@ parse_git_info() {
         local start=$'\001'
         local end=$'\002'
         
+        branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
         status=$(git status --porcelain 2>/dev/null)
+
         if [[ -n "$status" ]]; then
-            branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
             added=$(echo "$status" | grep '^A' | wc -l)
             modified=$(echo "$status" | grep '^ M' | wc -l)
             untracked=$(echo "$status" | grep '^??' | wc -l)
@@ -207,6 +208,8 @@ parse_git_info() {
             printf " | git:%s ${start}${GIT_DIRTY}${end}✘${start}${FG}${end}" "$branch"
             [[ $modified -gt 0 ]] && printf " ~$modified"
             [[ $untracked -gt 0 ]] && printf " ?$untracked"
+        else
+            printf " | git:%s ${start}${ACCENT}${end}✔${start}${FG}${end}" "$branch"
         fi
     fi
 }
