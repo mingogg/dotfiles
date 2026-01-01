@@ -63,6 +63,7 @@ safe_link "$DOTFILES_DIR/config/bashrc/.bashrc" "$HOME/.bashrc"
 
 # Walker
 safe_link "$DOTFILES_DIR/config/walker" "$CONFIG_DIR/walker"
+safe_link "$CONFIG_DIR/theme/current/colors/colors.css" "$CONFIG_DIR/walker/themes/current/colors.css"
 
 # GTK Themes
 safe_link "$CONFIG_DIR/theme/current/gtk/gtk-3.0" "$CONFIG_DIR/gtk-3.0"
