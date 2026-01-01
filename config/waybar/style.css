@@ -15,7 +15,7 @@
 
 #custom-updates:hover,
 #custom-logo:hover {
-  color: @accentLogo;
+  color: @accent;
 }
 
 #custom-logo {

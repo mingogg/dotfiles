@@ -4,6 +4,7 @@ source ~/.config/theme/current/colors/bashColors.sh
 echo -e "${PRIMARY}---  INSTALLATION LIST  ---${RESET}"
 echo -e "\n-- ${ACCENT}PACMAN UPDATES${RESET} --"
 
+sleep 1
 updates_pacman=$(checkupdates)
 
 if [[ -n "$updates_pacman" ]]; then
@@ -31,12 +32,13 @@ if [[ -z "$updates_pacman" && -z "$updates_aur" ]]; then
     exit 0
 fi
 
-echo -n -e "Proceed with the installation? (${PRIMARY}0=Yes${RESET} / ${GIT_DIRTY}1=No${RESET}): "
+echo -n -e "Proceed with the installation? (${PRIMARY}Y${RESET}/${GIT_DIRTY}n${RESET}): "
 read -r choice
+choice=${choice,,}
 
-if [[ "$choice" == "0" ]]; then
+if [[ "$choice" == "y" ]]; then
     echo -e "${PRIMARY}Initializing full installation...${RESET}"
-    yay -Syu --noconfirm --nodiffmenu
+    yay -Syu --noconfirm
     echo -e "\n${PRIMARY}Installation finished, press enter to close...${RESET}"
     read -r
 else
