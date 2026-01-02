@@ -76,6 +76,26 @@ APPS_PKGS=(
 
 sudo pacman -S --needed --noconfirm "${APPS_PKGS[@]}"
 
+printIt "[ CHECK ] Verifying installed packages"
+
+FAILED_PKGS=()
+
+for pkg in "${APPS_PKGS[@]}"; do
+  if ! pacman -Q "$pkg" &>/dev/null; then
+    FAILED_PKGS+=("$pkg")
+  fi
+done
+
+if (( ${#FAILED_PKGS[@]} > 0 )); then
+  printIt "[ ERROR ] The following packages failed to install:"
+  for pkg in "${FAILED_PKGS[@]}"; do
+    echo "  - $pkg"
+  done
+  exit 1
+fi
+
+printIt "[ OK ] All essential packages installed"
+
 # APPS - essential user tools from AUR
 AUR_APPS_PKGS=(
   lazydocker          # terminal UI for managing Docker containers
