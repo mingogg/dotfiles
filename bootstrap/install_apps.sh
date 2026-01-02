@@ -39,7 +39,7 @@ sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
 
 printIt "[ SYSTEM ] Installing yay"
 if ! command -v yay >/dev/null 2>&1; then
-  echo "${GREEN}[ AUR ] Installing yay...${RESET}\n"
+  echo -e "${GREEN}[ AUR ] Installing yay...${RESET}\n"
 
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   cd /tmp/yay || exit 1
