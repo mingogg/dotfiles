@@ -1,5 +1,5 @@
 if [ -f ~/.local/bin/bash-functions ]; then
-  source bash-functions
+  source ~/.local/bin/bash-functions
 fi
 
 if [ -f ~/.config/theme/current/colors/bashColors.sh ]; then
