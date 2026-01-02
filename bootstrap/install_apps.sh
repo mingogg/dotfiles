@@ -14,8 +14,8 @@ printIt() {
 # Ensure system time is correct (required for SSL / git / AUR)
 sudo timedatectl set-ntp true
 
-# Force the update of the database
-sudo pacman -Syy
+# Force the update of the system
+sudo pacman -Syu --noconfirm
 
 # SYSTEM - core infrastructure
 printIt "[ SYSTEM ] Installing infrastructure"
