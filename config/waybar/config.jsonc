@@ -21,7 +21,7 @@
 
   "custom/logo": {
     "format": "  ",
-    "on-click": "~/dotfiles/scripts/menu.sh",
+    "on-click": "menu",
     "on-click-right": "",
     "tooltip-format": "Arch Menu\n\nSuper + Alt + Space"
   },
@@ -56,7 +56,7 @@
     "format": "{} ",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/scripts/updates.sh",
+    "exec": "updates",
     "on-click": "launch-tui update update-all",
     "restart-interval": 300
   },

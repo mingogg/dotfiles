@@ -3,10 +3,10 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 options=$(cat <<EOF
-  Style: Change Theme
-  System: Logout
-  System: Reboot
-  System: Shutdown
+  🎨 Style: Change Theme
+  ⏏ System: Logout
+  🔄 System: Reboot
+  ⏻ System: Shutdown
 EOF
 )
 
@@ -15,16 +15,16 @@ selected=$(echo "$options" | walker -d -p "Search...")
 [ -z "$selected" ] && exit 0
 
 case "$selected" in
-  "Style: Change Theme")
+  "🎨 Style: Change Theme")
     change-theme
     ;;
-  "System: Logout")
+  "⏏ System: Logout")
     hyprctl dispatch exit
     ;;
-  "System: Reboot")
+  "🔄 System: Reboot")
     safeBraveReboot
     ;;
-  "System: Shutdown")
+  "⏻ System: Shutdown")
     safeBravePoweroff
     ;;
 esac

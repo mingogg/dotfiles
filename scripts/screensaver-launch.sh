@@ -37,7 +37,7 @@ for m in $(hyprctl monitors -j | jq -r '.[] | .name'); do
       -e screensaver-cmd
     ;;
   *)
-    notify-send "✋  Screensaver only runs in Alacritty, or Kitty"
+    notify-send "✋Screensaver only runs in Alacritty, or Kitty"
     ;;
   esac
 done

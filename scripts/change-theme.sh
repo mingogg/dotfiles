@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-THEMES_DIR="$HOME/dotfiles/theme"
+THEMES_DIR="$HOME/archkai/theme"
 CURRENT_LINK="$HOME/.config/theme/current"
 
 # List all themes and select with walker, except 'current'
