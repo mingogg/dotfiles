@@ -30,70 +30,70 @@ GREEN="\033[32m"
 RESET="\033[0m"
 
 # If there is a config folder that's needed from the dotfiles, it goes from
-# ~/dotfile/config to ~/.config/folder, else if there's a THEME needed, it goes from
+# ~/gadearch/config to ~/.config/folder, else if there's a THEME needed, it goes from
 # ~/.config/theme/current/folder to ~/.config/folder
 
 REAL_HOME="$HOME"
-CONFIG_DIR="$REAL_HOME/.config"
-DOTFILES_DIR="$REAL_HOME/dotfiles"
+CONFIG="$REAL_HOME/.config"
+DOTFILES="$REAL_HOME/archkai"
 
 echo -e "\n${BLUE}===================================${RESET}"
 echo -e "${GREEN}[ LINK ] applyin dotfiles symlinks${RESET}"
 echo -e "${BLUE}===================================${RESET}\n"
 
 # Ensure base config directory exists (single source of truth for all symlinks)
-mkdir -p "$CONFIG_DIR"
+mkdir -p "$CONFIG"
 
 # Create the Theme system
-safe_link "$DOTFILES_DIR/theme" "$CONFIG_DIR/theme"
-safe_link "$DOTFILES_DIR/theme/default" "$CONFIG_DIR/theme/current"
+safe_link "$DOTFILES/theme" "$CONFIG/theme"
+safe_link "$DOTFILES/theme/default" "$CONFIG/theme/current"
 
 # Hyprland
-safe_link "$DOTFILES_DIR/config/hypr" "$CONFIG_DIR/hypr"
+safe_link "$DOTFILES/config/hypr" "$CONFIG/hypr"
 
 # Nvim
-safe_link "$DOTFILES_DIR/config/nvim" "$CONFIG_DIR/nvim"
+safe_link "$DOTFILES/config/nvim" "$CONFIG/nvim"
 
 # Waybar
-safe_link "$DOTFILES_DIR/config/waybar" "$CONFIG_DIR/waybar"
-safe_link "$CONFIG_DIR/theme/current/colors/colors.css" "$CONFIG_DIR/waybar/colors.css"
+safe_link "$DOTFILES/config/waybar" "$CONFIG/waybar"
+safe_link "$CONFIG/theme/current/colors/colors.css" "$CONFIG/waybar/colors.css"
 
 # BASH
-safe_link "$DOTFILES_DIR/config/bashrc/.bashrc" "$HOME/.bashrc"
+safe_link "$DOTFILES/config/bashrc/.bashrc" "$HOME/.bashrc"
 
 # Walker
-safe_link "$DOTFILES_DIR/config/walker" "$CONFIG_DIR/walker"
-safe_link "$CONFIG_DIR/theme/current/colors/colors.css" "$CONFIG_DIR/walker/themes/current/colors.css"
+safe_link "$DOTFILES/config/walker" "$CONFIG/walker"
+safe_link "$CONFIG/theme/current/colors/colors.css" "$CONFIG/walker/themes/current/colors.css"
 
 # GTK Themes
-safe_link "$CONFIG_DIR/theme/current/gtk/gtk-3.0" "$CONFIG_DIR/gtk-3.0"
-safe_link "$CONFIG_DIR/theme/current/gtk/gtk-4.0" "$CONFIG_DIR/gtk-4.0"
+safe_link "$CONFIG/theme/current/gtk/gtk-3.0" "$CONFIG/gtk-3.0"
+safe_link "$CONFIG/theme/current/gtk/gtk-4.0" "$CONFIG/gtk-4.0"
 
 # Ly (login manager)
 echo -e "${BLUE}[ INFO ] Linking login manager system files (sudo required)${RESET}"
-safe_link_root "$CONFIG_DIR/theme/current/ly/config.ini" "/etc/ly/config.ini"
+safe_link_root "$CONFIG/theme/current/ly/config.ini" "/etc/ly/config.ini"
 
 # Colors for themes
-safe_link "$CONFIG_DIR/theme/current/colors" "$CONFIG_DIR/colors"
+safe_link "$CONFIG/theme/current/colors" "$CONFIG/colors"
 
 # Mako
-safe_link "$CONFIG_DIR/theme/current/mako" "$CONFIG_DIR/mako"
+safe_link "$CONFIG/theme/current/mako" "$CONFIG/mako"
 
 # btop
-safe_link "$CONFIG_DIR/theme/current/btop" "$CONFIG_DIR/btop"
+safe_link "$CONFIG/theme/current/btop" "$CONFIG/btop"
 
 # wiremix
-safe_link "$CONFIG_DIR/theme/current/wiremix" "$CONFIG_DIR/wiremix"
+safe_link "$CONFIG/theme/current/wiremix" "$CONFIG/wiremix"
 
 # tmux
-safe_link "$DOTFILES_DIR/config/tmux" "$CONFIG_DIR/tmux"
+safe_link "$DOTFILES/config/tmux" "$CONFIG/tmux"
 
 # alacritty
-safe_link "$DOTFILES_DIR/config/alacritty" "$CONFIG_DIR/alacritty"
+safe_link "$DOTFILES/config/alacritty" "$CONFIG/alacritty"
 
 # scripts executables in path
 mkdir -p "$HOME/.local/bin"
-for script in ~/dotfiles/scripts/*.sh; do
+for script in ~/archkai/scripts/*.sh; do
   [ -e "$script" ] || continue
   name=$(basename "$script" .sh)
   ln -sf "$script" "$HOME/.local/bin/$name"
