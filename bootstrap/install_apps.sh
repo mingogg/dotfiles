@@ -20,19 +20,21 @@ sudo pacman -Syu --noconfirm
 # SYSTEM - core infrastructure
 printIt "[ SYSTEM ] Installing infrastructure"
 SYSTEM_PKGS=(
-  networkmanager                # network connectivity
-  pipewire                      # audio/video engine
-  wireplumber                   # audio session manager
-  xdg-desktop-portal            # apps ↔ system bridge
-  xdg-desktop-portal-hyprland   # Wayland portal (Hyprland)
-  base-devel                    # build tools (yay)
-  git                           # clone PKGBUILDs
-  ttf-nerd-fonts-symbols        # symbols render
-  ttf-jetbrains-mono-nerd       # system font
-  pacman-contrib                # tools to enhance pacman
-  python                        # python 3 interpreter
-  python-pip                    # python pkg manager
-  python-pipx                   # python pkg manager for isolated Python apps (i.e., tte)
+  networkmanager                  # network connectivity
+  pipewire                        # audio/video engine
+  wireplumber                     # audio session manager
+  xdg-desktop-portal              # apps ↔ system bridge
+  xdg-desktop-portal-hyprland     # Wayland portal (Hyprland)
+  base-devel                      # build tools (yay)
+  git                             # clone PKGBUILDs
+  ttf-nerd-fonts-symbols          # symbols render
+  ttf-jetbrains-mono-nerd         # system font
+  adobe-source-han-sans-jp-fonts  # japanese symbols for the matrix effect in screensaver
+  adobe-source-han-serif-jp-fonts # japanese symbols for the matrix effect in screensaver
+  pacman-contrib                  # tools to enhance pacman (f.e., checkupdates)
+  python                          # python 3 interpreter
+  python-pip                      # python pkg manager
+  python-pipx                     # python pkg manager for isolated Python apps (f.e., tte)
 )
 
 sudo pacman -S --needed --noconfirm "${SYSTEM_PKGS[@]}"
