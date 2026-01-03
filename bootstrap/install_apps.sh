@@ -124,4 +124,3 @@ else
   echo -e "\n${GREEN}[ AUR ] All AUR packages are already installed${RESET}"
 fi
 
-pipx install terminaltexteffects # terminal effects for the screensaver

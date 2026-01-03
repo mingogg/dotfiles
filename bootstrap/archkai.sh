@@ -9,6 +9,9 @@ bash "$SCRIPT_DIR/install_apps.sh"
 # Create the symlink for the configs & themes
 bash "$SCRIPT_DIR/link.sh"
 
+# Has to be installed after creating the /.local/bin folder
+pipx install terminaltexteffects # terminal effects for the screensaver
+
 # Enables needed for the system to work
 bash "$SCRIPT_DIR/enable.sh"
 
