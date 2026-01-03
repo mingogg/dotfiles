@@ -3,7 +3,7 @@
 THEMES_DIR="$HOME/archkai/theme"
 CURRENT_LINK="$HOME/.config/theme/current"
 
-# List all themes and select with walker, except 'current'
+# Lists all themes and select with walker, except 'current'
 selected_theme=$(
   find "$THEMES_DIR" -maxdepth 1 -mindepth 1 -type d -printf '%f\n' | walker -d -p "Select theme"
   )
