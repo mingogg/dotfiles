@@ -8,9 +8,6 @@ echo -e "\n${BLUE}====================================${RESET}"
 echo -e "${GREEN}[ ENABLE ] Enabling system services${RESET}"
 echo -e "${BLUE}====================================${RESET}\n"
 
-# Sources bashrc configs
-source ~/.bashrc
-
 # Enables network connection
 sudo systemctl enable --now NetworkManager
 
@@ -22,10 +19,14 @@ if systemctl list-unit-files | grep -q docker.service; then
   sudo usermod -aG docker "$USER_NAME"
 fi
 
-# Re-launch apps to apply theme for the first time
-relaunch-apps
-
 # Ly (login manager)
 sudo systemctl disable getty@tty1.service
 sudo systemctl enable getty@tty2.service
 sudo systemctl enable ly@tty1.service
+
+# gtk settings for nautilus
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
+
+# Re-launch apps to apply theme for the first time
+relaunch-apps

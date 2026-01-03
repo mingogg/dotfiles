@@ -98,5 +98,3 @@ for script in ~/archkai/scripts/*.sh; do
   name=$(basename "$script" .sh)
   ln -sf "$script" "$HOME/.local/bin/$name"
 done
-
-

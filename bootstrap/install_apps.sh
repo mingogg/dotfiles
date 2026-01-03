@@ -25,6 +25,8 @@ SYSTEM_PKGS=(
   wireplumber                     # audio session manager
   xdg-desktop-portal              # apps ↔ system bridge
   xdg-desktop-portal-hyprland     # Wayland portal (Hyprland)
+  yaru-colors-gtk-theme           # gtk colors for nautilus
+  yaru-colors-icon-theme          # gtk icons for nautilus
   base-devel                      # build tools (yay)
   git                             # clone PKGBUILDs
   ttf-nerd-fonts-symbols          # symbols render
