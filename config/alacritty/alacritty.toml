@@ -2,8 +2,8 @@
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
 size = 11.2
 
@@ -12,9 +12,5 @@ padding.x = 14
 padding.y = 14
 decorations = "None"
 
-[keyboard]
-bindings = [
-{ key = "F11", action = "ToggleFullscreen" },
-{ key = "Insert", mods = "Shift", action = "Paste" },
-{ key = "Insert", mods = "Control", action = "Copy" }
-]
+[selection]
+save_to_clipboard = true
