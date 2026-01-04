@@ -25,8 +25,6 @@ SYSTEM_PKGS=(
   wireplumber                     # audio session manager
   xdg-desktop-portal              # apps ↔ system bridge
   xdg-desktop-portal-hyprland     # Wayland portal (Hyprland)
-  yaru-colors-gtk-theme           # gtk colors for nautilus
-  yaru-colors-icon-theme          # gtk icons for nautilus
   base-devel                      # build tools (yay)
   git                             # clone PKGBUILDs
   ttf-nerd-fonts-symbols          # symbols render
@@ -102,11 +100,13 @@ printIt "[ OK ] All essential packages installed"
 
 # APPS - essential user tools from AUR
 AUR_APPS_PKGS=(
-  lazydocker          # terminal UI for managing Docker containers
-  walker              # app launcher
-  brave-bin           # web browser
-  postman-bin         # testing APIs
-  xdg-terminal-exec   # utility (screensaver uses it)
+  lazydocker                # terminal UI for managing Docker containers
+  walker-bin                # app launcher
+  brave-bin                 # web browser
+  postman-bin               # testing APIs
+  xdg-terminal-exec         # utility (screensaver uses it)
+  yaru-colors-gtk-theme     # gtk colors for nautilus
+  yaru-colors-icon-theme    # gtk icons for nautilus
 )
 
 AUR_MISSING_PKGS=()
