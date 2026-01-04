@@ -9,6 +9,9 @@ fi
 echo "Syncing clock..."
 timedatectl set-ntp true
 
+echo "Updating package databases and keyring..."
+pacman -Sy --noconfirm archlinux-keyring
+
 echo "Installing base system (pacstrap)..."
 pacstrap /mnt base linux linux-firmware base-devel networkmanager git nano grub efibootmgr
 
