@@ -10,7 +10,7 @@ echo "Syncing clock..."
 timedatectl set-ntp true
 
 echo "Installing base system (pacstrap)..."
-pacstrap /mnt base linux linux-firmware base-devel networkmanager git nano
+pacstrap /mnt base linux linux-firmware base-devel networkmanager git nano grub efibootmgr
 
 echo "Generating fstab..."
 genfstab -U /mnt > /mnt/etc/fstab
