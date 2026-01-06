@@ -22,7 +22,7 @@ echo "Syncing clock..."
 timedatectl set-ntp true
 
 echo "Updating package databases and keyring..."
-pacman -Syu --noconfirm archlinux-keyring
+pacman -Sy --noconfirm archlinux-keyring
 
 mountpoint -q /mnt || {
   echo "/mnt is not mounted"

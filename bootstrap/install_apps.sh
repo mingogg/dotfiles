@@ -20,6 +20,7 @@ sudo pacman -Syu --noconfirm
 # SYSTEM - core infrastructure
 printIt "[ SYSTEM ] Installing infrastructure"
 SYSTEM_PKGS=(
+  hyprland                        # tiling window manager (u know already)
   networkmanager                  # network connectivity
   pipewire                        # audio/video engine
   wireplumber                     # audio session manager
